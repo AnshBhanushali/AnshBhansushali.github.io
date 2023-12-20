@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Personal Website Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root
+{
+    --bg-color : #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html
+{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body
+{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section
+{
+    min-height: 100vh;
+    padding: 10rem;
+}
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header.sticky
+{
+    border-bottom: .1rem solid rgba(0, 0, 0,.1);
+}
+.logo
+{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a
+{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover, .navbar a.active
+{
+    color: var(--main-color);
+}
+
+#menu-icon 
+{
+    font-size: 3.6rem;
+    color: var(--text-color) ;
+    display: none;
+}
+
+.home
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content h3
+{
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+span
+{
+    color: var(--main-color);
+}
+.home-img img
+{
+    width: 30vw;
+    border-radius: 50px;
+    margin: 10px;
+}
+.home-content h1
+{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.home-content p
+{
+    font-size: 1.6rem;
+}
+.social-media a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background:transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+}
+.btn
+{
+    display: inline-blo ck;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+}
+.btn:hover
+{
+    box-shadow: none;
+}
+.about
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--second-bg-color);
+}
+.about-img img
+{
+    width: 30vw;
+    border-radius: 50px;
+}
+.heading
+{
+    text-align: center;
+    font-size: 4.5rem;
+}
+.about-content h2
+{
+    text-align: left;
+    line-height: 1.2;
+}
+.about-content h3
+{
+    font-size: 2.6rem;
+}
+.about-content p
+{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+.portfolio
+{
+    background: var(--bg-color);
+}
+.portfolio h2
+{
+    margin-bottom: 4rem;
+}
+.portfolio-container
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.portfolio-container .portfolio-box
+{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+.portfolio-box img
+{
+    width: 100%;
+}
+.portfolio-box:hover img
+{
+    width: 100%;
+    transition: .5s ease;
+}
+.portfolio-box .portfolio-layer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(0,0,0,.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+.portfolio-box:hover .portfolio-layer
+{
+    transform:translate(0) ;
+}
+.portfolio p
+{
+    font-size: 0.75rem;
+}
+.portfolio-layer a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.portfolio-layer a i
+{
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+.portfolio-layer p
+{
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+.portfolio-layer a i
+{
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+.contact h2 
+{
+    margin-bottom: 3rem;
+}
+
+.contact form 
+{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact 
+{
+    background-color: var(--second-bg-color);
+}
+
+.contact form .input-box 
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea 
+{ 
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input 
+{
+    width: 49%;
+}
+
+.contact form textarea 
+{
+    resize: none;
+    background: var(--bg-color);
+    
+}
+
+.contact form .btn 
+{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+}
+
+.footer-text p
+{
+    font-size: 1.6rem;
+}
+
+.footer-icontop a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+}
+
+.footer-icontop a:hover
+{
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-icontop a i
+{
+    font-size: 2.4rem;
+    color: var(--bg-color);
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media(max-width: 991px){
+    .header{
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media(max-width: 768px){
+   #menu-icon{
+    display: block;
+   }
+
+   .navbar 
+   {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: .1rem solid black;
+    box-shadow: 0 .5rem 1rem black;
+   }
+
+   .navbar a 
+   {
+    display:block;
+    font-size: 2rem;
+    margin: 3rem 0;
+   }
+   .home
+   {
+    flex-direction: column;
+   }
+   .home-content h3{
+    font-size: 2.6rem;
+   }
+   .home-content h1{
+    font-size: 5rem;
+   }
+   .home-img img{
+    width: 70vw;
+    margin-top: 4rem;
+   }
+   .about{
+    flex-direction: column-reverse;
+   }
+   .about-img{
+    width: 70vw;
+    margin-top: 4rem;
+   }
+   .portfolio h2{
+    grid-template-columns: repeat(2, 1fr);
+   }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class ="logo">Portfolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+
+        <h3>Hey, It's me</h3>
+        <h3>Ansh Bhanushali</h3>
+        <h3>And I'm a <span>Full-Stack Developer</span></h3>
+        <p>As an 19-year-old, pursuing computer science, I've always been drawn to unraveling complex phenomena. The pure joy and fulfillment I find in solving intricate problems are beyond compare. When engrossed in coding or problem-solving, I lose track of time, and I cherish every moment of it. My academic journey reflects my inclination toward practical and utilitarian aspects, although I may have reservations about purely theoretical knowledge. My accomplishments have often stemmed from my ability to simplify and rely on empirical methods. Excelling in high school required me to bridge the gap between practical insights and theoretical concepts, a skill I now apply to my computer science studies!!</p>
+
+        <div class="social-media">
+            <a href="https://instagram.com/_anshbhanushali20_?igshid=NzZlODBkYWE4Ng=="><i class='bx bxl-instagram' ></i></a>
+            <a href="https://github.com/AnshBhanushali/"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/ansh-bhanushali-07536b246"><i class='bx bxl-linkedin'></i></a>
+        </div>
+        <a href="file:///C:/Users/anshbhnaushali/Downloads/AnshBhanushali_Resume_Summer2024.pdf" class="btn">Download CV</a>
+    </div>
+
+    <div class="home-img">
+        <img src="img/HOME-IMAGE.jpg" alt="Home-Image" width="400px" height="400px">
+    </div>
+
+</section>
+
+<section class="about" id="about">
+    <div class="about-img">
+        <img src="img/img2.jpg" alt="About-img" height="400px" width="400px">
+    </div>
+
+    <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Full-Stack Developer</h3>
+        <p>Hello, I'm Ansh Bhanushali, an 19-year-old computer science enthusiast hailing from the vibrant landscapes of India. I am a current student from <span>University of Cincinnati</span>,doing my bachelors in Computer Science. My journey into the world of technology has been an exhilarating one, marked by an insatiable curiosity to untangle intricate phenomena.
+
+            There's an unparalleled sense of fulfillment that washes over me when I conquer a challenging problem. It's during these moments that I lose track of time, willingly surrendering hours because the pursuit of knowledge and innovation is simply worth it.
+            
+            I'm a practical learner at heart, finding solace in the tangible and utilitarian aspects of computer science. Theoretical knowledge, while essential, tends to intimidate me less when I can translate it into practical, real-world solutions. My academic journey in high school was a testament to this approach, where I seamlessly blended my practical understanding with theoretical finesse to excel.
+            
+            As a computer science student, I am dedicated to pushing boundaries, embracing emerging technologies, and crafting solutions that make a difference. From coding to software experimentation, I'm on a perpetual quest for new challenges and learning experiences.
+            
+            My web portfolio is a reflection of my passion and dedication to the ever-evolving field of computer science. Join me as I navigate this dynamic realm, sharing my projects, insights, and discoveries along the way. Together, let's embark on a journey to harness the limitless potential of technology.</p>
+        <a href="#" class="btn">Read More</a>
+    </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+    <h2 class="heading">Latest <span>Projects</span></h2>
+    <div class="portfolio-container">
+        <div class="portfolio-box">
+            <img src="img/csimg1.jpg" alt="" height="400" width="500">
+            <div class="portfolio-layer">
+                <h4>Web Design</h4>
+                <p>
+                    Web design is a dynamic discipline that combines creativity, technology, and user-centric principles to craft visually appealing and functional websites. It involves the artful arrangement of elements such as layout, colors, typography, and imagery to create a seamless and engaging user experience. Web designers strive to strike a balance between aesthetics and usability, ensuring that websites not only look beautiful but also perform optimally on various devices and browsers. They leverage HTML, CSS, and often JavaScript to bring their designs to life. In the ever-evolving digital landscape, web design plays a pivotal role in conveying information, fostering user interaction, and leaving a lasting impression on visitors.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+    
+   
+    <div class="portfolio-box">
+        <img src="img/csimg2.jpg" alt="" height="400" width="500">
+        <div class="portfolio-layer">
+            <h4>Game Development</h4>
+            <p>
+                Game development is a multifaceted process that melds creativity, technology, and storytelling to create interactive virtual experiences. It encompasses the entire journey of a game, from concept and design to coding, testing, and deployment. Game developers wield programming languages like C++, Python, and Unity to bring characters, worlds, and gameplay mechanics to life. Storytelling, art, sound design, and user experience are intricately woven into the fabric of game development. It's a field where innovation thrives, pushing the boundaries of hardware and software capabilities. Ultimately, game development is about crafting immersive, entertaining, and often educational experiences that captivate players and transport them to new realms of imagination.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+        </div>
+    </div>
+
+    <div class="portfolio-box">
+        <img src="img/csimg3.jpg" alt="" height="400" width="500">
+        <div class="portfolio-layer">
+            <h4>Web Clones</h4>
+            <p>
+                Web cloning, often referred to as website cloning, is the practice of duplicating an existing website's design, structure, and functionality to create a similar website. This process involves examining the target website's code, layout, and features and then replicating them in a new project. Web cloning can serve various purposes, from learning web development techniques to creating prototypes quickly. However, it raises ethical and legal concerns, as copying another website's content or design without permission may infringe on copyrights and intellectual property rights. It's essential to approach web cloning ethically, using it as a learning tool or for inspiration while respecting the original creators' work.</p>
+                <a href="#"><i class='bx bx-link-external'></i>></a>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+
+    <form action="#">
+        <div class="input-box">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="input-box">
+            <input type="number" placeholder="Mobile Number">
+            <input type="text" placeholder="Email Subject">
+        </div>
+        <div class="input-box">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+        </div>
+        <input type="submit" value="Send Message" class="btn">
+    </form>
+</section>
+
+<footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy;All Right Reserved.</p>
+    </div>
+
+    <div class="footer-icontop">
+        <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/scrollreveal">
+    let menuIcon = document.querySelector('#menu-icon'); // Corrected variable name to 'menuIcon'
+let navbar = document.querySelector('.navbar')
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
+let sections = document.querySelectorAll('section'); // Changed variable name to 'sections'
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active'); // Changed 'navLinks' to 'link' here
+            });
+            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+        }
+    });
+
+    let header = document.querySelector('header');
+
+    header.classList.toggle('sticky', window.scrollY > 100);
+
+    if (menuIcon.classList.contains('bx-x')) {
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    }
+};
+
+ScrollReveal({
+    reset: true,
+    distance: '80px',
+    duration: 2000,
+    delay: 200
+});
+
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
