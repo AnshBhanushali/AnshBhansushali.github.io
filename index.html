@@ -6,435 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Personal Website Portfolio</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-*
-{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
-}
-
-:root
-{
-    --bg-color : #1f242d;
-    --second-bg-color: #323946;
-    --text-color: #fff;
-    --main-color: #0ef;
-}
-
-html
-{
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-
-body
-{
-    background: var(--bg-color);
-    color: var(--text-color);
-}
-
-section
-{
-    min-height: 100vh;
-    padding: 10rem;
-}
-.header
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 9%;
-    background: var(--bg-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-.header.sticky
-{
-    border-bottom: .1rem solid rgba(0, 0, 0,.1);
-}
-.logo
-{
-    font-size: 2.5rem;
-    color: var(--text-color);
-    font-weight: 600;
-    cursor: default;
-}
-
-.navbar a
-{
-    font-size: 1.7rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    transition: .3s;
-}
-
-.navbar a:hover, .navbar a.active
-{
-    color: var(--main-color);
-}
-
-#menu-icon 
-{
-    font-size: 3.6rem;
-    color: var(--text-color) ;
-    display: none;
-}
-
-.home
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.home-content h3
-{
-    font-size: 3.2rem;
-    font-weight: 700;
-}
-span
-{
-    color: var(--main-color);
-}
-.home-img img
-{
-    width: 30vw;
-    border-radius: 50px;
-    margin: 10px;
-}
-.home-content h1
-{
-    font-size: 5.6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-.home-content p
-{
-    font-size: 1.6rem;
-}
-.social-media a
-{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background:transparent;
-    border: .2rem solid var(--main-color);
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
-}
-.btn
-{
-    display: inline-blo ck;
-    padding: 1rem 2.8rem;
-    background: var(--main-color);
-    border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1.6rem;
-    color: var(--second-bg-color);
-    letter-spacing: .1rem;
-    font-weight: 600;
-}
-.btn:hover
-{
-    box-shadow: none;
-}
-.about
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background: var(--second-bg-color);
-}
-.about-img img
-{
-    width: 30vw;
-    border-radius: 50px;
-}
-.heading
-{
-    text-align: center;
-    font-size: 4.5rem;
-}
-.about-content h2
-{
-    text-align: left;
-    line-height: 1.2;
-}
-.about-content h3
-{
-    font-size: 2.6rem;
-}
-.about-content p
-{
-    font-size: 1.6rem;
-    margin: 2rem 0 3rem;
-}
-.portfolio
-{
-    background: var(--bg-color);
-}
-.portfolio h2
-{
-    margin-bottom: 4rem;
-}
-.portfolio-container
-{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2.5rem;
-}
-.portfolio-container .portfolio-box
-{
-    position: relative;
-    border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
-    overflow: hidden;
-    display: flex;
-}
-.portfolio-box img
-{
-    width: 100%;
-}
-.portfolio-box:hover img
-{
-    width: 100%;
-    transition: .5s ease;
-}
-.portfolio-box .portfolio-layer
-{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgb(0,0,0,.1), var(--main-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 4rem;
-    transform: translateY(100%);
-    transition: .5s ease;
-}
-.portfolio-box:hover .portfolio-layer
-{
-    transform:translate(0) ;
-}
-.portfolio p
-{
-    font-size: 0.75rem;
-}
-.portfolio-layer a
-{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background: var(--text-color);
-    border-radius: 50%;
-}
-
-.portfolio-layer a i
-{
-    font-size: 2rem;
-    color: var(--second-bg-color);
-}
-
-.portfolio-layer p
-{
-    margin: .3rem 0 1rem;
-}
-
-.portfolio-layer a
-{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background: var(--text-color);
-    border-radius: 50%;
-}
-.portfolio-layer a i
-{
-    font-size: 2rem;
-    color: var(--second-bg-color);
-}
-.contact h2 
-{
-    margin-bottom: 3rem;
-}
-
-.contact form 
-{
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.contact 
-{
-    background-color: var(--second-bg-color);
-}
-
-.contact form .input-box 
-{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.contact form .input-box input,
-.contact form textarea 
-{ 
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    border-radius: .8rem;
-    margin: .7rem 0;
-}
-
-.contact form .input-box input 
-{
-    width: 49%;
-}
-
-.contact form textarea 
-{
-    resize: none;
-    background: var(--bg-color);
-    
-}
-
-.contact form .btn 
-{
-    margin-top: 2rem;
-    cursor: pointer;
-}
-
-.footer
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem 9%;
-    background: var(--bg-color);
-}
-
-.footer-text p
-{
-    font-size: 1.6rem;
-}
-
-.footer-icontop a
-{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: .8rem;
-    background: var(--main-color);
-    border-radius: .8rem;
-}
-
-.footer-icontop a:hover
-{
-    box-shadow: 0 0 1rem var(--main-color);
-}
-
-.footer-icontop a i
-{
-    font-size: 2.4rem;
-    color: var(--bg-color);
-}
-
-@media (max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
-}
-
-@media(max-width: 991px){
-    .header{
-        padding: 2rem 3%;
-    }
-    section{
-        padding: 10rem 3% 2rem;
-    }
-    .footer{
-        padding: 2rem 3%;
-    }
-}
-
-@media(max-width: 768px){
-   #menu-icon{
-    display: block;
-   }
-
-   .navbar 
-   {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem 3%;
-    background: var(--bg-color);
-    border-top: .1rem solid black;
-    box-shadow: 0 .5rem 1rem black;
-   }
-
-   .navbar a 
-   {
-    display:block;
-    font-size: 2rem;
-    margin: 3rem 0;
-   }
-   .home
-   {
-    flex-direction: column;
-   }
-   .home-content h3{
-    font-size: 2.6rem;
-   }
-   .home-content h1{
-    font-size: 5rem;
-   }
-   .home-img img{
-    width: 70vw;
-    margin-top: 4rem;
-   }
-   .about{
-    flex-direction: column-reverse;
-   }
-   .about-img{
-    width: 70vw;
-    margin-top: 4rem;
-   }
-   .portfolio h2{
-    grid-template-columns: repeat(2, 1fr);
-   }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -454,77 +26,201 @@ span
     <section class="home" id="home">
         <div class="home-content">
 
-        <h3>Hey, It's me</h3>
-        <h3>Ansh Bhanushali</h3>
-        <h3>And I'm a <span>Full-Stack Developer</span></h3>
-        <p>As an 19-year-old, pursuing computer science, I've always been drawn to unraveling complex phenomena. The pure joy and fulfillment I find in solving intricate problems are beyond compare. When engrossed in coding or problem-solving, I lose track of time, and I cherish every moment of it. My academic journey reflects my inclination toward practical and utilitarian aspects, although I may have reservations about purely theoretical knowledge. My accomplishments have often stemmed from my ability to simplify and rely on empirical methods. Excelling in high school required me to bridge the gap between practical insights and theoretical concepts, a skill I now apply to my computer science studies!!</p>
+        <h3>Hello. I'm Ansh Bhanushali</h3>
+        <h3><span>A Full-Stack Developer.</span></h3>
+        <p>Welcome to my personal portfolio! I am student with a passion for coding. With a strong background in web development, web design and database management. I bring a unique blend of technical expertise and creative problem-solving to every project I undertake. Through persistence, self-discipline, and commitmnet, I have achieved my goal of becoming a fullstack developer. What kept me on this journey is the excitement, and commitment for facing new challenges. </p>
 
         <div class="social-media">
             <a href="https://instagram.com/_anshbhanushali20_?igshid=NzZlODBkYWE4Ng=="><i class='bx bxl-instagram' ></i></a>
             <a href="https://github.com/AnshBhanushali/"><i class='bx bxl-github'></i></a>
             <a href="https://www.linkedin.com/in/ansh-bhanushali-07536b246"><i class='bx bxl-linkedin'></i></a>
         </div>
-        <a href="file:///C:/Users/anshbhnaushali/Downloads/AnshBhanushali_Resume_Summer2024.pdf" class="btn">Download CV</a>
+        <a href="C:/Users/anshbhnaushali/Downloads/AnshBhanushali_Resume_Summer2024.pdf" class="btn">Download CV</a>
     </div>
 
     <div class="home-img">
-        <img src="img/HOME-IMAGE.jpg" alt="Home-Image" width="400px" height="400px">
+        <img src="img/img2.jpg" alt="Home-Image" width="400px" height="400px">
     </div>
 
 </section>
 
 <section class="about" id="about">
-    <div class="about-img">
-        <img src="img/img2.jpg" alt="About-img" height="400px" width="400px">
-    </div>
 
     <div class="about-content">
         <h2 class="heading">About <span>Me</span></h2>
-        <h3>Full-Stack Developer</h3>
-        <p>Hello, I'm Ansh Bhanushali, an 19-year-old computer science enthusiast hailing from the vibrant landscapes of India. I am a current student from <span>University of Cincinnati</span>,doing my bachelors in Computer Science. My journey into the world of technology has been an exhilarating one, marked by an insatiable curiosity to untangle intricate phenomena.
-
-            There's an unparalleled sense of fulfillment that washes over me when I conquer a challenging problem. It's during these moments that I lose track of time, willingly surrendering hours because the pursuit of knowledge and innovation is simply worth it.
-            
-            I'm a practical learner at heart, finding solace in the tangible and utilitarian aspects of computer science. Theoretical knowledge, while essential, tends to intimidate me less when I can translate it into practical, real-world solutions. My academic journey in high school was a testament to this approach, where I seamlessly blended my practical understanding with theoretical finesse to excel.
-            
-            As a computer science student, I am dedicated to pushing boundaries, embracing emerging technologies, and crafting solutions that make a difference. From coding to software experimentation, I'm on a perpetual quest for new challenges and learning experiences.
-            
-            My web portfolio is a reflection of my passion and dedication to the ever-evolving field of computer science. Join me as I navigate this dynamic realm, sharing my projects, insights, and discoveries along the way. Together, let's embark on a journey to harness the limitless potential of technology.</p>
-        <a href="#" class="btn">Read More</a>
+        <h3>Background</h3>
+        <p>My academic journey began with a Bachelor's degree in Computer Science from <span>University of Cincinnati</span>, laying the groundwork for my technical prowess, where I immersed myself in the latest research and real-world applications, shaping my holistic understanding of software development.In the ever-evolving tech landscape, adaptability is paramount. I embrace an agile mindset, fostering collaboration and flexibility within teams. This approach not only ensures successful project outcomes but also cultivates an environment where ideas flourish and innovation thrives.Away from the keyboard, I am an avid advocate for continuous learning, exploring emerging technologies, and contributing to the vibrant tech community. I believe in the transformative power of technology to drive positive change, and I am excited about the endless possibilities that lie ahead.</p>
+        <h3 class="skills">Skills</h3>
+        <div class="skills-wrapper">
+            <div class="skill-box">HTML</div>
+            <div class="skill-box">CSS</div>
+            <div class="skill-box">Tailwind</div>
+            <div class="skill-box">BootStrap</div>
+            <div class="skill-box">JavaScript</div>
+            <div class="skill-box">React Js</div>
+            <div class="skill-box">Angular</div>
+            <div class="skill-box">Express Js</div>
+            <div class="skill-box">Node Js</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">Django</div>
+            <div class="skill-box">Java</div>
+            <div class="skill-box">SpringBoot</div>
+            <div class="skill-box">C++</div>
+            <div class="skill-box">SQL</div>
+            <div class="skill-box">MySQL</div>
+            <div class="skill-box">MongoDB</div>
+            <div class="skill-box">GitHub</div>
+            <div class="skill-box">Git</div>
+            <div class="skill-box">Firebase</div>
+            <div class="skill-box">Docker</div>
+            <div class="skill-box">Jira</div>
+            <div class="skill-box">Scrum</div>
+            <div class="skill-box">PowerBi</div>
+            <div class="skill-box">AWS</div>
+          </div>
     </div>
+
+    <h3 class="experience">Experience</h3>
+   
+    <div class="experience-item">
+        <p class="date">August 2023 - December 2023</p>
+        <div class="position-details">
+          <h3>CEAS Department - Software Developer</h3>
+          <p class="role-details">
+            In my role as a tutor at the CEAS library, I played a crucial role in educating and mentoring over 200 students through a series of dynamic workshops spanning various programming languages and tools, such as Python, Matlab, GitHub & Git, LabVIEW, and SQL. My responsibilities extended beyond traditional tutoring, as I took charge of the company's data management, logistics, and fostered collaboration with external organizations. As part of my commitment to technological innovation, I developed and deployed a Discord Bot using PyCharm, showcasing my proficiency in creating efficient and interactive solutions.
+
+            In addition to educational initiatives, I ventured into game development, crafting engaging experiences like the Flappy Bird and Ping Pong games using Pygame. This hands-on approach not only enriched my understanding of software development but also provided students with practical insights. My journey also delved into the realms of artificial intelligence, contributing to the evolving landscape of technology. Through these multifaceted experiences, I continuously strive to bridge the gap between theoretical knowledge and real-world applications, fostering a holistic learning environment for students and pushing the boundaries of my own capabilities in the ever-evolving field of technology.
+          </p>
+          <div class="skills-wrapper">
+            <div class="skill-box">Python</div>
+            <div class="skill-box">LaTeX</div>
+            <div class="skill-box">MATLAB</div>
+            <div class="skill-box">GitHub</div>
+            <div class="skill-box">Git</div>
+            <div class="skill-box">C++</div>
+            <div class="skill-box">Data Visualization</div>
+            <div class="skill-box">Data Manipulation</div>
+            <div class="skill-box">Pygame</div>
+            <div class="skill-box">SQL</div>
+            <div class="skill-box">LabView</div>
+        </div>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <p class="date">August 2023 - December 2023</p>
+        <div class="position-details">
+          <h3>Resident Advisor</h3>
+          <p class="role-details">
+            As a Resident Advisor (RA), my role went beyond the traditional boundaries of a housing position. I took pride in fostering a supportive and inclusive living community for my fellow residents. Serving as a peer mentor and resource, I provided guidance on academic, personal, and social matters. My responsibilities included organizing and executing engaging community events, ensuring the well-being and safety of residents, and serving as a liaison between residents and the university administration.
+
+            I actively promoted a positive and respectful living environment, addressing and mediating conflicts when necessary. One of the highlights of my tenure was creating initiatives that enhanced community bonding, such as themed events and collaborative projects. Being an RA was not just a position; it was an opportunity to contribute to the growth and well-being of my fellow residents, fostering a sense of belonging and support within the residence hall.
+          </p>
+          <div class="skills-wrapper">
+            <div class="skill-box">Communication</div>
+            <div class="skill-box">Leadership</div>
+            <div class="skill-box">Time Management</div>
+            <div class="skill-box">Problem-solving</div>
+            <div class="skill-box">Time Management</div>
+            <div class="skill-box">Conflict Resolution</div>
+            <div class="skill-box">Team Collaboration</div>
+        </div>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <p class="date">August 2023 - December 2023</p>
+        <div class="position-details">
+          <h3>Research Assistant</h3>
+          <p class="role-details">
+            In my capacity as a Research Associate with the Anti-Corruption Intelligence Committee from April 2021 to July 2022, I dedicated my efforts to empowering individuals through valuable educational initiatives.
+
+            A significant aspect of my role involved spearheading Cybercrime Awareness campaigns. Through engaging sessions, I enlightened participants about the ever-evolving landscape of cyber threats, online security best practices, and the importance of maintaining digital vigilance. Topics such as phishing, identity theft, and data breaches were addressed comprehensively, enabling participants to safeguard their digital assets effectively.
+
+            Another impactful initiative I led was the Property Transfer Seminar. In these seminars, I provided invaluable insights into the intricacies of property transactions, covering legal considerations, documentation processes, and financial aspects. By equipping attendees with comprehensive knowledge and essential resources, the seminars aimed to facilitate smooth and informed property transfers, ultimately enhancing participants' confidence in navigating real estate transactions. My tenure as a Research Associate was not just about contributing to the Anti-Corruption Intelligence Committee but also about fostering a community empowered with knowledge and confidence in addressing contemporary challenges.
+        </p>
+          
+          <div class="skills-wrapper">
+            <div class="skill-box">Cybercrime</div>
+            <div class="skill-box">Data Breaches</div>
+            <div class="skill-box">Phishing</div>
+            <div class="skill-box">SQL</div>
+            <div class="skill-box">Data Base Security</div>
+            <div class="skill-box">Data Science</div>
+            <div class="skill-box">Cyber Security</div>
+        </div>
+
+        </div>
+    </div>
+
 </section>
 
 <section class="portfolio" id="portfolio">
     <h2 class="heading">Latest <span>Projects</span></h2>
     <div class="portfolio-container">
         <div class="portfolio-box">
-            <img src="img/csimg1.jpg" alt="" height="400" width="500">
+            <img src="img/Social_Media background.jpg" alt="" height="400" width="500">
             <div class="portfolio-layer">
-                <h4>Web Design</h4>
+                <h4>Circlify---Django-Social-Media-App</h4>
                 <p>
-                    Web design is a dynamic discipline that combines creativity, technology, and user-centric principles to craft visually appealing and functional websites. It involves the artful arrangement of elements such as layout, colors, typography, and imagery to create a seamless and engaging user experience. Web designers strive to strike a balance between aesthetics and usability, ensuring that websites not only look beautiful but also perform optimally on various devices and browsers. They leverage HTML, CSS, and often JavaScript to bring their designs to life. In the ever-evolving digital landscape, web design plays a pivotal role in conveying information, fostering user interaction, and leaving a lasting impression on visitors.</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    Circlify, a dynamic social media platform meticulously crafted using Django, sets itself apart with a rich array of features that redefine the user experience. This vibrant hub fosters seamless connections, providing users with intuitive tools for social engagement. From personalized profiles and interactive feeds to real-time messaging, Circlify encapsulates the essence of community building. Emphasizing user security, the platform integrates Django's robust authentication, ensuring a safe and trustworthy digital environment. Its innovative approach extends to multimedia sharing, event creation, and beyond, offering a comprehensive social ecosystem. Circlify stands as a testament to the fusion of cutting-edge Django development and a vision for fostering meaningful online interactions. Join Circlify, where the power of Django converges with social connectivity, shaping a platform that transcends conventional social media boundaries</p>
+                    <a href="https://github.com/AnshBhanushali/Circlify---Django-Social-Media-App"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
     
    
     <div class="portfolio-box">
-        <img src="img/csimg2.jpg" alt="" height="400" width="500">
+        <img src="img/E-commerce background.webp" alt="" height="400" width="500">
         <div class="portfolio-layer">
-            <h4>Game Development</h4>
+            <h4>VintageLegacy--Django-E-CommerceWebsite</h4>
             <p>
-                Game development is a multifaceted process that melds creativity, technology, and storytelling to create interactive virtual experiences. It encompasses the entire journey of a game, from concept and design to coding, testing, and deployment. Game developers wield programming languages like C++, Python, and Unity to bring characters, worlds, and gameplay mechanics to life. Storytelling, art, sound design, and user experience are intricately woven into the fabric of game development. It's a field where innovation thrives, pushing the boundaries of hardware and software capabilities. Ultimately, game development is about crafting immersive, entertaining, and often educational experiences that captivate players and transport them to new realms of imagination.</p>
-                <a href="#"><i class='bx bx-link-external'></i></a>
+                Vintage Legacy, an avant-garde e-commerce application meticulously engineered with robust Django framework, redefines online shopping with a comprehensive suite of features. Seamlessly blending sophisticated design and intuitive functionality, Vintage Legacy provides users with a captivating shopping experience. From personalized user profiles and secure transactions to dynamic product displays and a streamlined checkout process, every facet of e-commerce is thoughtfully curated. Leveraging Django's authentication and database management, Vintage Legacy prioritizes user security and efficient data handling. The platform encompasses a myriad of e-commerce essentials, including product management, reviews, and a responsive customer support system. Vintage Legacy stands as a testament to the synergy between Django's prowess and a vision for an elevated online retail experience. Join Vintage Legacy – where the elegance of Django converges with cutting-edge e-commerce, crafting an immersive platform that transcends conventional shopping paradigms</p>
+                <a href="https://github.com/AnshBhanushali/VintageLegacy--Django-E-CommerceWebsite"><i class='bx bx-link-external'></i></a>
         </div>
     </div>
 
     <div class="portfolio-box">
-        <img src="img/csimg3.jpg" alt="" height="400" width="500">
+        <img src="img/reakestatebackground.png" alt="" height="400" width="500">
         <div class="portfolio-layer">
-            <h4>Web Clones</h4>
+            <h4>RealtySearch</h4>
             <p>
-                Web cloning, often referred to as website cloning, is the practice of duplicating an existing website's design, structure, and functionality to create a similar website. This process involves examining the target website's code, layout, and features and then replicating them in a new project. Web cloning can serve various purposes, from learning web development techniques to creating prototypes quickly. However, it raises ethical and legal concerns, as copying another website's content or design without permission may infringe on copyrights and intellectual property rights. It's essential to approach web cloning ethically, using it as a learning tool or for inspiration while respecting the original creators' work.</p>
-                <a href="#"><i class='bx bx-link-external'></i>></a>
+                RealtySearch, a dynamic real estate database app crafted using Python and SQL, transforms property exploration into a streamlined and informative experience. This innovative platform harnesses the power of Python's versatility and SQL's database management to provide users with a comprehensive tool for discovering real estate. Users can effortlessly navigate through a diverse range of listings, utilizing advanced search parameters to find properties that align with their preferences and budgets. RealtySearch's user-friendly interface, built on Python's Django framework, ensures smooth interaction and efficient data retrieval. Notably, the app excels in presenting accurate and detailed pricing information, empowering users to make informed decisions. RealtySearch exemplifies the seamless integration of Python and SQL, delivering a cutting-edge solution that redefines the way individuals explore and engage with real estate opportunities.</p>
+                <a href="https://github.com/AnshBhanushali/RealtySearch---Realestate-Website"><i class='bx bx-link-external'></i>></a>
+        </div>
+    </div>
+
+
+<div class="portfolio-box">
+    <img src="img/OpenAI background.webp" alt="" height="400" width="500">
+    <div class="portfolio-layer">
+        <h4>ChatApp - OpenAPI</h4>
+        <p>
+            I proudly present ChatApp, a culmination of innovation where I've seamlessly integrated ChatGPT's cutting-edge conversational capabilities into a user-friendly interface. By leveraging the power of OpenAI's ChatGPT, the ChatApp delivers a chat experience enriched with natural language understanding and dynamic responses.
+
+            For the backend, I employed the robust combination of Python and Django, ensuring a scalable and efficient infrastructure. The integration of the ChatAPI API further enhances the app's functionality, providing a seamless communication bridge. Users can engage in meaningful conversations, driven by ChatGPT's advanced language model, all while the Python-Django backend ensures a reliable and responsive experience. This project represents the convergence of state-of-the-art AI technology and backend development, offering a feature-packed ChatApp that transcends conventional chat experiences</p>
+            <a href="https://github.com/AnshBhanushali/ChatApp-OpenAI_API"><i class='bx bx-link-external'></i>></a>
+        </div>
+    </div>
+
+<div class="portfolio-box">
+    <img src="img/discordbotbackground.webp" alt="" height="400" width="500">
+    <div class="portfolio-layer">
+        <h4>DiscordBot</h4>
+        <p>
+            "In the realm of Discord bot development, I've harnessed the power of Python in PyCharm to create a feature-rich and dynamic bot. PyCharm's robust IDE facilitated a seamless coding experience, allowing me to effortlessly implement a comprehensive set of Discord features. From fundamental commands to intricate functionalities, my Discord bot, born from the synergy of Python and PyCharm, excels in server moderation, engagement, and entertainment.
+
+            The intuitive interface of PyCharm and Python's versatility enabled the seamless integration of diverse commands and interactions, offering users a rich and responsive experience. Whether it's moderation tools, interactive features, or entertainment commands, this Discord bot stands as a testament to the capabilities of Python in PyCharm, showcasing a meticulously crafted and fully-featured solution for enhancing Discord server dynamics</p>
+            <a href="https://github.com/AnshBhanushali/DiscordBot-Chat"><i class='bx bx-link-external'></i>></a>
+        </div>
+    </div>
+
+<div class="portfolio-box">
+    <img src="img/snakegame background.jpg" alt="" height="400" width="500">
+    <div class="portfolio-layer">
+        <h4>Snake Game</h4>
+        <p>
+            Dive into the immersive world of classic gaming with my Python-crafted Snake Game. Leveraging the simplicity and versatility of Python, this project revitalizes the beloved retro game, offering a nostalgic yet engaging experience. Powered by Pygame, the Snake Game introduces players to the thrill of navigating a growing serpent across the screen, devouring food, and evading collisions. Python's beginner-friendly syntax, combined with Pygame's robust capabilities, makes this project not only a fun and challenging gaming experience but also an ideal entry point for programming enthusiasts. As the snake progressively lengthens, players are tested on their reflexes and strategic prowess. The Snake Game stands as a testament to the seamless fusion of Python programming and game development, providing an interactive and educational journey for players of all levels.</p>
+            <a href="https://github.com/AnshBhanushali/Snake-Game-in-Python"><i class='bx bx-link-external'></i>></a>
         </div>
     </div>
 </div>
@@ -549,9 +245,11 @@ span
     </form>
 </section>
 
+<hr>
 <footer class="footer">
+   
     <div class="footer-text">
-        <p>Copyright &copy;All Right Reserved.</p>
+        <p>Created By Ansh Bhanushali.</p>
     </div>
 
     <div class="footer-icontop">
@@ -559,53 +257,5 @@ span
     </div>
 </footer>
 
-<script src="https://unpkg.com/scrollreveal">
-    let menuIcon = document.querySelector('#menu-icon'); // Corrected variable name to 'menuIcon'
-let navbar = document.querySelector('.navbar')
-
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
-
-let sections = document.querySelectorAll('section'); // Changed variable name to 'sections'
-let navLinks = document.querySelectorAll('header nav a');
-
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(link => {
-                link.classList.remove('active'); // Changed 'navLinks' to 'link' here
-            });
-            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-        }
-    });
-
-    let header = document.querySelector('header');
-
-    header.classList.toggle('sticky', window.scrollY > 100);
-
-    if (menuIcon.classList.contains('bx-x')) {
-        menuIcon.classList.remove('bx-x');
-        navbar.classList.remove('active');
-    }
-};
-
-ScrollReveal({
-    reset: true,
-    distance: '80px',
-    duration: 2000,
-    delay: 200
-});
-
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-</script>
-
-<script src="script.js"></script>
 </body>
 </html>

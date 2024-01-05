@@ -42,3 +42,6 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+
+var roleDetails = document.querySelector('.role-details').innerText;
+    console.log('Role Details:', roleDetails);
