@@ -161,7 +161,13 @@ span
 .about-content h3
 {
     margin-top: 2.5rem;
-    font-size: 2.6rem;
+    font-size: 3rem;
+    margin-left: 0rem;
+}
+.about-content h4
+{
+    margin-top:2.5rem;
+    font-size: 2rem;
     margin-left: 0rem;
 }
 .about-content p
@@ -187,6 +193,53 @@ span
     border: 1px solid green;
     border-radius: 5px;
 }
+.custom-wrapper {
+    width: 80%;
+    max-width: 4000px;
+  }
+  
+  .custom-skill {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .custom-skill span
+  {
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .language {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .percentage {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+
+  .custom-skill-bar {
+    height: 10px; 
+    background-color: white;
+    width: 10px;
+    transition: width 1s;
+  }
+  .custom-wrapper h3
+  {
+    font-size: 3rem;
+    margin-left: 0;
+    margin-top: 4rem;
+  }
+  
+  .python { background-color: green; }
+  .java { background-color: green; }
+  .cpp { background-color: green; }
+  .javascript { background-color: green; }
+
 .resume {
     max-width: 800px;
     margin: 50px auto;
@@ -212,7 +265,7 @@ span
     margin-left: 0rem;
   }
   .experience{
-    font-size: 2.3rem;
+    font-size: 3rem;
     margin: 2.5rem;
     margin-left: 0rem;
   }
