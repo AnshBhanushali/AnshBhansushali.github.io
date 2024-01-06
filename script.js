@@ -1,12 +1,12 @@
-let menuIcon = document.querySelector('#menu-icon'); // Corrected variable name to 'menuIcon'
-let navbar = document.querySelector('.navbar')
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 };
 
-let sections = document.querySelectorAll('section'); // Changed variable name to 'sections'
+let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
@@ -18,7 +18,7 @@ window.onscroll = () => {
 
         if (top >= offset && top < offset + height) {
             navLinks.forEach(link => {
-                link.classList.remove('active'); // Changed 'navLinks' to 'link' here
+                link.classList.remove('active');
             });
             document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
         }
@@ -43,5 +43,10 @@ ScrollReveal({
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 
-var roleDetails = document.querySelector('.role-details').innerText;
-    console.log('Role Details:', roleDetails);
+document.getElementById('menu-icon').addEventListener('click', function () {
+    document.querySelector('.navbar').classList.toggle('active');
+});
+
+
+      
+      
