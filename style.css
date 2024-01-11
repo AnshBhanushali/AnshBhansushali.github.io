@@ -493,7 +493,12 @@ span
     color: var(--bg-color);
 }
 
-/* Your existing styles */
+#msg
+{
+    color: green;
+    margin-top: -10px;
+    display: block;
+}
 
 @media only screen and (max-width: 600px) {
     /* Adjust styles for screens with a maximum width of 600px (example value) */

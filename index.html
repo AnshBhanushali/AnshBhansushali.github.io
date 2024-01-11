@@ -36,7 +36,7 @@
             <a href="https://github.com/AnshBhanushali/"><i class='bx bxl-github'></i></a>
             <a href="https://www.linkedin.com/in/ansh-bhanushali-07536b246"><i class='bx bxl-linkedin'></i></a>
         </div>
-        <a href="https://drive.google.com/file/d/1uS2wrkbMuprS3if8v_KOzOipgHErBwwr/view?usp=drivesdk " class="btn">Download CV</a>
+        <a href="img/Screenshot 2024-01-10 192754.png" class="btn">Download CV</a>
     </div>
 
     <div class="home-img">
@@ -148,6 +148,27 @@
       </div>
 
     <h3 class="experience">Experience</h3>
+
+    <div class="experience-item">
+        <p class="date">January 2024 - Present</p>
+        <div class="position-details">
+          <h3>ENED - Teaching Assistant</h3>
+          <p class="role-details">
+            Having previously served as an ENED Teaching Assistant, I bring firsthand experience and a proven track record of successfully fulfilling the responsibilities associated with the position. My past role involved collaborating closely with instructors, providing valuable support to students, grading assignments, and leading tutorials. I am well-versed in fostering a positive and inclusive learning environment, and my commitment to educational excellence has been demonstrated through effective communication and engagement with both faculty and students. If the opportunity arises, I am enthusiastic about the prospect of continuing my contributions to the Engineering Education program in this capacity. Please feel free to reach out if you need any additional information or references regarding my prior experience in the role.
+          </p>
+          <div class="skills-wrapper">
+            <div class="skill-box">Communication</div>
+            <div class="skill-box">Teamwork</div>
+            <div class="skill-box">Organization</div>
+            <div class="skill-box">Technical Proficiency</div>
+            <div class="skill-box">Feedback and Evaluation</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">LabView</div>
+            <div class="skill-box">Robotics</div>
+            <div class="skill-box">MATLAB</div>
+        </div>
+        </div>
+    </div>
    
     <div class="experience-item">
         <p class="date">August 2023 - December 2023</p>
@@ -296,20 +317,21 @@
 <section class="contact" id="contact">
     <h2 class="heading">Contact <span>Me!</span></h2>
 
-    <form action="#">
+    <form name="submit-to-google-sheet">
         <div class="input-box">
-            <input type="text" placeholder="Full Name">
-            <input type="email" placeholder="Email Address">
+            <input type="text" name="Name" placeholder="Full Name">
+            <input type="email" name="Email" placeholder="Email Address">
         </div>
         <div class="input-box">
-            <input type="number" placeholder="Mobile Number">
-            <input type="text" placeholder="Email Subject">
+            <input type="number" name="Number" placeholder="Mobile Number">
+            <input type="text" name="Email Subject" placeholder="Email Subject">
         </div>
         <div class="input-box">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea name="Message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
         </div>
         <input type="submit" value="Send Message" class="btn">
     </form>
+    <span id="msg">Message Update</span>
 </section>
 
 <hr>
@@ -323,6 +345,38 @@
         <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
     </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body:new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+                })
+                .catch(error => console.error('Error!',error.message))
+            })
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbztJ4Bd-gF-Xzu8DkmabXVTiM6GVl-CUE27JsfIJrld_LbEeRNUZ3rpWAJHfbqtRA/exec';
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    console.log('Success!', response);
+                    
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    
+                });
+        });
+    
+</script>
+
 
 </body>
 </html>
